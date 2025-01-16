@@ -95,6 +95,7 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
 # Display
 PRODUCT_PACKAGES += \
+    init.qti.display_boot.rc \
     init.qti.display_boot.sh \
     libmemutils \
     libtinyxml \
@@ -182,17 +183,14 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_codecs_blair.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_blair.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_holi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_holi.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance_blair.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_blair.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance_holi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_holi.xml \
     $(LOCAL_PATH)/configs/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
 
 PRODUCT_PACKAGES += \
-    android.media.audio.common.types-V1-cpp \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
-    libstagefrighthw
+    android.media.audio.common.types-V1-cpp
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -225,6 +223,11 @@ PRODUCT_PACKAGES += \
     WifiResTarget
 
 # Partitions
+PRODUCT_PACKAGES += \
+    vendor_bt_firmware_mountpoint \
+    vendor_dsp_mountpoint \
+    vendor_firmware_mnt_mountpoint
+
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Permissions
