@@ -163,7 +163,7 @@ include hardware/oplus/sepolicy/qti/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # Vendor Security patch level
-BOOT_SECURITY_PATCH := 2025-09-01
+BOOT_SECURITY_PATCH := 2025-10-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Verified Boot
